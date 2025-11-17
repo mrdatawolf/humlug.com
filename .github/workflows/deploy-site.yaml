@@ -1,10 +1,12 @@
 name: Deploy to Github Pages
 
-# run when a commit is pushed to "source" branch
 on:
   push:
     branches:
-    - source
+      - source
+
+permissions:
+  contents: write
 
 jobs:
   deploy:
@@ -12,28 +14,35 @@ jobs:
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-    # checkout to the commit that has been pushed
-    - uses: actions/checkout@v4
-      with:
-        submodules: true # Fetch Hugo themes (true OR recursive)
-        fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
-    
-    # install Hugo
-    - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v2
-      with:
-        hugo-version: '0.119.0'
-        extended: true
+      # Checkout latest commit
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+          fetch-depth: 0
 
-    # build website
-    - name: Build
-      run: hugo
+      # Install Hugo (latest minor for security/bugfixes)
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.119.0'
+          extended: true
 
-    # push the generated content into the `main` (former `master`) branch.
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_branch: main # if your main branch is `master` use that here.
-        publish_dir: ./public
-        cname: humlug.org
+      # Build using Hugo
+      - name: Build
+        run: hugo
+
+      # Clear and copy public to docs (required for GitHub Pages)
+      - name: Copy site to docs directory
+        run: |
+          rm -rf docs
+          mkdir -p docs
+          cp -r public/* docs/
+
+      # Deploy to main branch, set CNAME (change below to humlug.com if switching domains)
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: main
+          publish_dir: ./docs
+          cname: humlug.com
