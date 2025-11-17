@@ -11,4 +11,4 @@ We have monthly presentation focussed meetings on the third Thursday at 6:00PM a
 - Currently scheduled Presentation: Unifi full stack deployment with cameras. 
 - Also discussion of using Claude LLM and how it differs in coding from some other top LLMs. 
 - hopefully another person's work will be presented.
-
+-  
