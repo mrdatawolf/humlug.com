@@ -1,0 +1,37 @@
+name: Build Hugo site and publish to docs
+
+on:
+  push:
+    branches:
+      - main  # or your default branch
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: 'latest'
+
+      - name: Build Hugo site
+        run: hugo --minify
+
+      - name: Ensure docs directory exists & clear old contents
+        run: |
+          rm -rf docs
+          mkdir -p docs
+
+      - name: Copy site to docs directory
+        run: cp -r public/* docs/
+
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'Update site: rebuild Hugo and publish to docs for GitHub Pages'
+          branch: main
+          file_pattern: docs/**
