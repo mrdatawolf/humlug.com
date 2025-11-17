@@ -1,9 +1,8 @@
-name: Deploy to Github Pages
+name: Deploy Hugo site to GitHub Pages
 
 on:
   push:
-    branches:
-      - source
+    branches: [ source ]
 
 permissions:
   contents: write
@@ -11,38 +10,25 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-22.04
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-      # Checkout latest commit
       - uses: actions/checkout@v4
         with:
           submodules: true
           fetch-depth: 0
 
-      # Install Hugo (latest minor for security/bugfixes)
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: '0.119.0'
           extended: true
 
-      # Build using Hugo
       - name: Build
         run: hugo
 
-      # Clear and copy public to docs (required for GitHub Pages)
-      - name: Copy site to docs directory
-        run: |
-          rm -rf docs
-          mkdir -p docs
-          cp -r public/* docs/
-
-      # Deploy to main branch, set CNAME (change below to humlug.com if switching domains)
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: main
-          publish_dir: ./docs
-          cname: humlug.com
+          publish_branch: gh-pages
+          publish_dir: ./public
+          cname: humlug.com   # Set to your custom domain ("humlug.com")
