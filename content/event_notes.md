@@ -29,3 +29,61 @@ Video of the presentation:
 https://drive.google.com/file/d/19XeHLMtnmnT88G4iZ0vgbz75rODm58Nk/view
 
 # June 2025
+
+# Dec 2025
+John Hauser via humboldt.edu 
+	
+Fri, Dec 19, 8:16 AM (4 days ago)
+	
+	
+to humlug
+In deference to most members sensibilities, the photos of my "machine stacks & racks" cabling have not been included!
+ 
+What’s the purpose of a 10” server rack?
+Portability
+Organization 
+Clean look
+Good for multiples of 1U items
+
+Pros
+Enforces discipline & planning
+Concentrates compute
+Tiny/Mini/Micro 1L PCs
+
+Cons
+Stuff that doesn’t fit - Various MiniPCs - Cheaper Chinese > 1U High
+Also High Intel NUCs, external hard drives
+No solution to power or power brick issues
+ When 10” isn’t? Inside rails = 8.75”
+Ventilation 
+
+Mini ITX Examples
+NAS board
+Where’s the power supply?
+Where’s SATA storage gonna go?
+
+Minisforum BD795i SE example
+16 cores, 32 threads, 128GB RAM
+Where’s the GPU gonna go?
+Where’s the power supply going to go?
+
+Current Favorite Value MiniPC - Peladn WO4
+But it doesn’t fit in 1U!
+Heard about it from this YT video:
+https://youtu.be/tp_iQpjSctM?si=Z9NkQtaPiEiAFa6z
+
+Make sure you get the right configuration, they sell multiple ones:
+https://peladn.us/products/peladn-ha-4-mini-pc-amd-ryzen-5-7640hs?variant=50551604576573
+AMD Ryzen5 7640HS
+6 core, 12 thread CPU, 32GB DDR5 RAM, 1TB NVME
+2 NICs - 1x2.5Gb, 1x1Gb
+2 NVME slots
+$384 w 10% discount code Geek1201
+ships from US warehouse
+
+Worth it for the RAM alone
+Good for Proxmox node w Ceph storage due to 2nd NIC and 2nd NVME
+
+VirtualizationHowto YT channel and blog
+https://www.youtube.com/@VirtualizationHowto/videos
+https://www.virtualizationhowto.com
