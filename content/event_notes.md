@@ -31,12 +31,8 @@ https://drive.google.com/file/d/19XeHLMtnmnT88G4iZ0vgbz75rODm58Nk/view
 # June 2025
 
 # Dec 2025
-John Hauser via humboldt.edu 
-	
-Fri, Dec 19, 8:16 AM (4 days ago)
-	
-	
-to humlug
+*John Hauser*
+
 In deference to most members sensibilities, the photos of my "machine stacks & racks" cabling have not been included!
  
 What’s the purpose of a 10” server rack?
