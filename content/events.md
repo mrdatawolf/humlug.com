@@ -5,10 +5,8 @@
 
 ## Evening meetings:
 We have monthly presentation focussed meetings on the third Thursday at 6:00PM at [Babe's Pizza](https://goo.gl/maps/bChPaDrPDU42) in Eureka. 
-### Next meeting: 6:00PM Nov 20, 2025 at the [Babe's Pizza](https://goo.gl/maps/bChPaDrPDU42) conference room
+### Next meeting: 6:00PM Jan 15, 2026 at the [Babe's Pizza](https://goo.gl/maps/bChPaDrPDU42) conference room
 
 
-- Currently scheduled Presentation: Unifi full stack deployment with cameras. 
-- Also discussion of using Claude LLM and how it differs in coding from some other top LLMs. 
-- hopefully another person's work will be presented.
+- Currently scheduled Presentation: "show & tell" progress report on his DIY, acronym-rich portable software defined radio project which includes one or two Raspberry Pi’s, RTL-SDR radio dongle, sub-GHz radio, LoRa, stuffed inside a Pelican case  powered by a Jackery power station.
 -  
