@@ -8,5 +8,5 @@ We have monthly presentation focussed meetings on the third Thursday at 6:00PM a
 ### Next meeting: 6:00PM Jan 15, 2026 at the [Babe's Pizza](https://goo.gl/maps/bChPaDrPDU42) conference room
 
 
-- Currently scheduled Presentation: "show & tell" progress report on his DIY, acronym-rich portable software defined radio project which includes one or two Raspberry Pi’s, RTL-SDR radio dongle, sub-GHz radio, LoRa, stuffed inside a Pelican case  powered by a Jackery power station.
+- Currently scheduled Presentation: "show & tell" progress report on his DIY, acronym-rich portable software defined radio project which includes one or two Raspberry Pi’s, RTL-SDR radio dongle, sub-GHz radio, LoRa, Halo, stuffed inside a Pelican case  powered by a Jackery power station.
 -  
