@@ -10,5 +10,5 @@ We have monthly presentation focussed meetings on the third Thursday at 6:00PM a
 
 - Currently scheduled Presentations are around Text, Search and you!
 -  Dave is updating on Obsidan with Astro and Vault CMS and a Git plugin to manage, sync and publish his homelab documentation
-- Patrick and Ryan are demoing the two search systems they each made.
-- Patrick will also show a simple budgeting app hee is part of developing.
+- Patrick and Ryan are demoing the two search systems they each made. [Patricks Search Tool](https://github.com/mrdatawolf/SuperSearchLocalDocs)
+- Patrick will also show a simple budgeting app he is part of developing. [Budget App](https://github.com/mrdatawolf/budget-app)
