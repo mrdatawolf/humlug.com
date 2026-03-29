@@ -40,69 +40,81 @@
     </nav>
 
 <main>
-<p>#!/usr/bin/env bash</p>
-<h1 id="heading"></h1>
-<h1 id="meshtastic-serial-fix-script-for-bazzite--silverblue--fedora">Meshtastic Serial Fix Script for Bazzite / Silverblue / Fedora</h1>
-<h1 id="--------------------------------------------------------------">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</h1>
-<h1 id="this-script-does-not-modify-your-system-automatically">This script DOES NOT modify your system automatically.</h1>
-<h1 id="instead-it-documents-the-exact-steps-required-to-fix">Instead, it documents the exact steps required to fix:</h1>
-<h1 id="--serial-port-access-failures">- Serial port access failures</h1>
-<h1 id="--missing-dialout-group">- Missing dialout group</h1>
-<h1 id="--modemmanager-interference">- ModemManager interference</h1>
-<h1 id="--flatpak-edge-blocking-web-serial">- Flatpak Edge blocking Web Serial</h1>
-<h1 id="heading-1"></h1>
-<h1 id="run-this-script-to-view-the-commands-and-explanations">Run this script to <em>view</em> the commands and explanations.</h1>
-<h1 id="copypaste-the-ones-you-need">Copy/paste the ones you need.</h1>
-<h1 id="heading-2"></h1>
-<p>echo &ldquo;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&rdquo;
-echo &quot; Meshtastic Serial Troubleshooting Reference&quot;
-echo &ldquo;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&rdquo;
-echo</p>
-<p>echo &ldquo;1) Install Microsoft Edge (RPM version, NOT Flatpak)&rdquo;
-echo &ldquo;# Bazzite requires the RPM version for Web Serial access.&rdquo;
-echo &ldquo;# This installs the repo + browser into the immutable image:&rdquo;
-echo &ldquo;sudo rpm-ostree install <a href="https://packages.microsoft.com/yumrepos/edge/Packages/m/microsoft-edge-stable-146.0.3856.84-1.x86_64.rpm%22">https://packages.microsoft.com/yumrepos/edge/Packages/m/microsoft-edge-stable-146.0.3856.84-1.x86_64.rpm&quot;</a>
-echo</p>
-<p>echo &ldquo;2) Remove Flatpak Edge if it exists (it cannot access serial ports)&rdquo;
-echo &ldquo;flatpak uninstall com.microsoft.Edge&rdquo;
-echo</p>
-<p>echo &ldquo;3) Verify the Meshtastic device path&rdquo;
-echo &ldquo;# Most Wio Tracker devices appear as /dev/ttyACM0&rdquo;
-echo &ldquo;ls -l /dev/ttyACM*&rdquo;
-echo</p>
-<p>echo &ldquo;4) Ensure the dialout group exists&rdquo;
-echo &ldquo;getent group dialout&rdquo;
-echo</p>
-<p>echo &ldquo;5) Manually add yourself to the dialout group&rdquo;
-echo &ldquo;# On Bazzite/Silverblue, usermod may fail silently.&rdquo;
-echo &ldquo;# Editing /etc/group directly is the reliable method.&rdquo;
-echo
-echo &ldquo;sudo nano /etc/group&rdquo;
-echo &ldquo;# Add or modify the line to:&rdquo;
-echo &ldquo;# dialout:x:18:YOURUSERNAME&rdquo;
-echo</p>
-<p>echo &ldquo;6) Restart your user session so group membership applies&rdquo;
-echo &ldquo;# Reboot is NOT enough on Bazzite.&rdquo;
-echo &ldquo;loginctl terminate-user $USER&rdquo;
-echo &ldquo;# Then log back in normally.&rdquo;
-echo</p>
-<p>echo &ldquo;7) Disable ModemManager (it grabs /dev/ttyACM0 and blocks Web Serial)&rdquo;
-echo &ldquo;sudo systemctl stop ModemManager&rdquo;
-echo &ldquo;sudo systemctl disable ModemManager&rdquo;
-echo</p>
-<p>echo &ldquo;8) Verify nothing else is holding the serial port&rdquo;
-echo &ldquo;lsof /dev/ttyACM0&rdquo;
-echo</p>
-<p>echo &ldquo;9) Check dmesg for ACM/USB issues&rdquo;
-echo &ldquo;dmesg | tail -n 40&rdquo;
-echo</p>
-<p>echo &ldquo;10) Launch Edge (RPM version) and test Web Serial&rdquo;
-echo &ldquo;# Meshtastic Web → Connect → Serial → Select /dev/ttyACM0&rdquo;
-echo</p>
-<p>echo &ldquo;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&rdquo;
-echo &quot; Done. Follow the steps above to ensure stable Web Serial.&rdquo;
-echo &ldquo;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&rdquo;</p>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Meshtastic Serial Fix Script for Bazzite / Silverblue / Fedora</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># --------------------------------------------------------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># This script DOES NOT modify your system automatically.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Instead, it documents the exact steps required to fix:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   - Serial port access failures</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   - Missing dialout group</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   - ModemManager interference</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   - Flatpak Edge blocking Web Serial</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Run this script to *view* the commands and explanations.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Copy/paste the ones you need.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;------------------------------------------------------------&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34; Meshtastic Serial Troubleshooting Reference&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;------------------------------------------------------------&#34;</span>
+</span></span><span style="display:flex;"><span>echo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;1) Install Microsoft Edge (RPM version, NOT Flatpak)&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;# Bazzite requires the RPM version for Web Serial access.&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;# This installs the repo + browser into the immutable image:&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;sudo rpm-ostree install https://packages.microsoft.com/yumrepos/edge/Packages/m/microsoft-edge-stable-146.0.3856.84-1.x86_64.rpm&#34;</span>
+</span></span><span style="display:flex;"><span>echo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;2) Remove Flatpak Edge if it exists (it cannot access serial ports)&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;flatpak uninstall com.microsoft.Edge&#34;</span>
+</span></span><span style="display:flex;"><span>echo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;3) Verify the Meshtastic device path&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;# Most Wio Tracker devices appear as /dev/ttyACM0&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;ls -l /dev/ttyACM*&#34;</span>
+</span></span><span style="display:flex;"><span>echo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;4) Ensure the dialout group exists&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;getent group dialout&#34;</span>
+</span></span><span style="display:flex;"><span>echo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;5) Manually add yourself to the dialout group&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;# On Bazzite/Silverblue, usermod may fail silently.&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;# Editing /etc/group directly is the reliable method.&#34;</span>
+</span></span><span style="display:flex;"><span>echo
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;sudo nano /etc/group&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;# Add or modify the line to:&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;# dialout:x:18:YOURUSERNAME&#34;</span>
+</span></span><span style="display:flex;"><span>echo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;6) Restart your user session so group membership applies&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;# Reboot is NOT enough on Bazzite.&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;loginctl terminate-user \$USER&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;# Then log back in normally.&#34;</span>
+</span></span><span style="display:flex;"><span>echo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;7) Disable ModemManager (it grabs /dev/ttyACM0 and blocks Web Serial)&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;sudo systemctl stop ModemManager&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;sudo systemctl disable ModemManager&#34;</span>
+</span></span><span style="display:flex;"><span>echo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;8) Verify nothing else is holding the serial port&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;lsof /dev/ttyACM0&#34;</span>
+</span></span><span style="display:flex;"><span>echo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;9) Check dmesg for ACM/USB issues&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;dmesg | tail -n 40&#34;</span>
+</span></span><span style="display:flex;"><span>echo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;10) Launch Edge (RPM version) and test Web Serial&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;# Meshtastic Web → Connect → Serial → Select /dev/ttyACM0&#34;</span>
+</span></span><span style="display:flex;"><span>echo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;------------------------------------------------------------&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34; Done. Follow the steps above to ensure stable Web Serial.&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;------------------------------------------------------------&#34;</span>
+</span></span></code></pre></div>
 </main>
 
 <footer>

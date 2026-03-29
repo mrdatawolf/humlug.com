@@ -55,8 +55,7 @@ Next meeting: 6:00PM Mar 19th, 2026 at the Babe&amp;rsquo;s Pizza conference roo
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/example/</guid>
-      <description>#!/usr/bin/env bash
-Meshtastic Serial Fix Script for Bazzite / Silverblue / Fedora &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash; This script DOES NOT modify your system automatically. Instead, it documents the exact steps required to fix: - Serial port access failures - Missing dialout group - ModemManager interference - Flatpak Edge blocking Web Serial Run this script to view the commands and explanations. Copy/paste the ones you need. echo &amp;ldquo;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;rdquo; echo &amp;quot; Meshtastic Serial Troubleshooting Reference&amp;quot; echo &amp;ldquo;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;rdquo; echo</description>
+      <description>#!/usr/bin/env bash # # Meshtastic Serial Fix Script for Bazzite / Silverblue / Fedora # -------------------------------------------------------------- # This script DOES NOT modify your system automatically. # Instead, it documents the exact steps required to fix: # - Serial port access failures # - Missing dialout group # - ModemManager interference # - Flatpak Edge blocking Web Serial # # Run this script to *view* the commands and explanations. # Copy/paste the ones you need.</description>
     </item>
     
     <item>
