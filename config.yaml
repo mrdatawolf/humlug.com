@@ -22,8 +22,15 @@ menu:
     - name: Event Notes
       url: "event_notes/"
       weight: 5
+    - name: Example
+      url: "example/"
+      weight: 6
+    - name: Knowledge
+      url: "knowledge/"
+      weight: 7
     - name: Join
       url: "join/"
+      weight: 8
 
 params:
   description: "Official website of the Humboldt Linux Users Group (HumLUG)."
