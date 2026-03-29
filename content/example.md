@@ -1,3 +1,4 @@
+```bash
 #!/usr/bin/env bash
 #
 # Meshtastic Serial Fix Script for Bazzite / Silverblue / Fedora
@@ -72,3 +73,4 @@ echo
 echo "------------------------------------------------------------"
 echo " Done. Follow the steps above to ensure stable Web Serial."
 echo "------------------------------------------------------------"
+```
