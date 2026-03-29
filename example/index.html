@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="mask-icon" href="../safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> | HumLUG - Humboldt Linux Users Group</title>
+    <link rel="stylesheet" href=../css/style.css>
+    <img src="../images/logo.png" alt="HumLUG Logo">
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="../">Home</a></li>
+      
+      <li><a href="../about/">About</a></li>
+      
+      <li><a href="../announcements/">Announcements</a></li>
+      
+      <li><a href="../events/">Events</a></li>
+      
+      <li><a href="../event_notes/">Event Notes</a></li>
+      
+      <li><a href="../example/">Example</a></li>
+      
+      <li><a href="../knowledge/">Knowledge</a></li>
+      
+      <li><a href="../join/">Join</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<main>
+<p>#!/usr/bin/env bash</p>
+<h1 id="heading"></h1>
+<h1 id="meshtastic-serial-fix-script-for-bazzite--silverblue--fedora">Meshtastic Serial Fix Script for Bazzite / Silverblue / Fedora</h1>
+<h1 id="--------------------------------------------------------------">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</h1>
+<h1 id="this-script-does-not-modify-your-system-automatically">This script DOES NOT modify your system automatically.</h1>
+<h1 id="instead-it-documents-the-exact-steps-required-to-fix">Instead, it documents the exact steps required to fix:</h1>
+<h1 id="--serial-port-access-failures">- Serial port access failures</h1>
+<h1 id="--missing-dialout-group">- Missing dialout group</h1>
+<h1 id="--modemmanager-interference">- ModemManager interference</h1>
+<h1 id="--flatpak-edge-blocking-web-serial">- Flatpak Edge blocking Web Serial</h1>
+<h1 id="heading-1"></h1>
+<h1 id="run-this-script-to-view-the-commands-and-explanations">Run this script to <em>view</em> the commands and explanations.</h1>
+<h1 id="copypaste-the-ones-you-need">Copy/paste the ones you need.</h1>
+<h1 id="heading-2"></h1>
+<p>echo &ldquo;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&rdquo;
+echo &quot; Meshtastic Serial Troubleshooting Reference&quot;
+echo &ldquo;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&rdquo;
+echo</p>
+<p>echo &ldquo;1) Install Microsoft Edge (RPM version, NOT Flatpak)&rdquo;
+echo &ldquo;# Bazzite requires the RPM version for Web Serial access.&rdquo;
+echo &ldquo;# This installs the repo + browser into the immutable image:&rdquo;
+echo &ldquo;sudo rpm-ostree install <a href="https://packages.microsoft.com/yumrepos/edge/Packages/m/microsoft-edge-stable-146.0.3856.84-1.x86_64.rpm%22">https://packages.microsoft.com/yumrepos/edge/Packages/m/microsoft-edge-stable-146.0.3856.84-1.x86_64.rpm&quot;</a>
+echo</p>
+<p>echo &ldquo;2) Remove Flatpak Edge if it exists (it cannot access serial ports)&rdquo;
+echo &ldquo;flatpak uninstall com.microsoft.Edge&rdquo;
+echo</p>
+<p>echo &ldquo;3) Verify the Meshtastic device path&rdquo;
+echo &ldquo;# Most Wio Tracker devices appear as /dev/ttyACM0&rdquo;
+echo &ldquo;ls -l /dev/ttyACM*&rdquo;
+echo</p>
+<p>echo &ldquo;4) Ensure the dialout group exists&rdquo;
+echo &ldquo;getent group dialout&rdquo;
+echo</p>
+<p>echo &ldquo;5) Manually add yourself to the dialout group&rdquo;
+echo &ldquo;# On Bazzite/Silverblue, usermod may fail silently.&rdquo;
+echo &ldquo;# Editing /etc/group directly is the reliable method.&rdquo;
+echo
+echo &ldquo;sudo nano /etc/group&rdquo;
+echo &ldquo;# Add or modify the line to:&rdquo;
+echo &ldquo;# dialout:x:18:YOURUSERNAME&rdquo;
+echo</p>
+<p>echo &ldquo;6) Restart your user session so group membership applies&rdquo;
+echo &ldquo;# Reboot is NOT enough on Bazzite.&rdquo;
+echo &ldquo;loginctl terminate-user $USER&rdquo;
+echo &ldquo;# Then log back in normally.&rdquo;
+echo</p>
+<p>echo &ldquo;7) Disable ModemManager (it grabs /dev/ttyACM0 and blocks Web Serial)&rdquo;
+echo &ldquo;sudo systemctl stop ModemManager&rdquo;
+echo &ldquo;sudo systemctl disable ModemManager&rdquo;
+echo</p>
+<p>echo &ldquo;8) Verify nothing else is holding the serial port&rdquo;
+echo &ldquo;lsof /dev/ttyACM0&rdquo;
+echo</p>
+<p>echo &ldquo;9) Check dmesg for ACM/USB issues&rdquo;
+echo &ldquo;dmesg | tail -n 40&rdquo;
+echo</p>
+<p>echo &ldquo;10) Launch Edge (RPM version) and test Web Serial&rdquo;
+echo &ldquo;# Meshtastic Web → Connect → Serial → Select /dev/ttyACM0&rdquo;
+echo</p>
+<p>echo &ldquo;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&rdquo;
+echo &quot; Done. Follow the steps above to ensure stable Web Serial.&rdquo;
+echo &ldquo;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&rdquo;</p>
+
+</main>
+
+<footer>
+  <hr/>
+  <a href="https://www.kernel.org/linux.html"><img src="../images/tuxlogo.png" alt="Linux Tux Logo" height="50"></a> &nbsp;&nbsp; <a href="https://www.freebsd.org"> <img src="../images/bsdlogo.png" alt="BSD Daemon Logo" height="50"></a> &nbsp;&nbsp; <a href="http://www.catb.org/hacker-emblem"> <img src="../images/favicon.ico" alt="Glider Logo" height="50"></a>
+  <br/>
+  <font size="-2">
+  
+  All logos and trademarks in this site are property of their respective owner. Anything else not covered by it&rsquo;s own copyright is © 2025 &ndash; 2026 humlug.org &ndash; <a href="https://github.com/mrdatawolf/humlug.com">Github repo</a> &ndash; Contact the site <a href="mailto:humlug@humboldt.edu">admin</a> 
+  
+  </font>
+  </footer>
+  </body>
+</html>
+
