@@ -9,3 +9,5 @@ We have monthly presentation focussed meetings on the third Thursday at 6:00PM a
 
 - **Patrick** - More on Meshtastic. Probably focused on what has been learned building https://github.com/mrdatawolf/MeshtasticForeman/ 
 - More?
+- **John** - Project N.O.M.A.D https://www.projectnomad.us/ and it's setup and briefly compare it to the features of Internet in a Box https://wiki.iiab.io/go/Main_Page. I'll give a a "likes/dislikes" review of NOMAD. May even get Doyle to do a fresh install of it! It's all GUI!
+- **John** - Demo of the UI of Pinchflat, a GUI to yt-dlp that has some advantages to using the command line version.
