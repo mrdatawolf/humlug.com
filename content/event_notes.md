@@ -1,5 +1,12 @@
 # Notes on Meetings:
 
+# MAy 2026 - 
+
+https://urldefense.com/v3/__https://github.com/9001/copyparty__;!!OzdlGbv3!6IRdEYdfHkzn0w4d-9emZwzMiWayIIczkcD7IZMiADJTuqFh5fjkeIivH_lfX5SXl2HbtqVXgeA-p11nKHc$
+
+https://github.com/mrdatawolf/project-brain
+
+
 # March 2025 -
 
 MQTT notes:
