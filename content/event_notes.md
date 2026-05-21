@@ -1,11 +1,17 @@
 # Notes on Meetings:
 
-# MAy 2026 - 
+# May 2026 - 
 
 https://urldefense.com/v3/__https://github.com/9001/copyparty__;!!OzdlGbv3!6IRdEYdfHkzn0w4d-9emZwzMiWayIIczkcD7IZMiADJTuqFh5fjkeIivH_lfX5SXl2HbtqVXgeA-p11nKHc$
 
 https://github.com/mrdatawolf/project-brain
 
+#April 2026 -
+Project NOMAD
+Knowledge that never goes offline
+Release 1.32.0
+v1.32.0 is here.
+https://urldefense.com/v3/__https://crosstalksolutions.us20.list-manage.com/track/click?u=48c0b53253f77061ffe21068b&id=5eecfc1b04&e=c498deec1e__;!!OzdlGbv3!6uUQ5UtJj4JvqyVNK0fd4a_SbbapUlvFzb1xKasH0agj4bdgT12liEPe2Ny2nYSjJo5_lH0etS3Fo-61t2M$
 
 # March 2025 -
 
