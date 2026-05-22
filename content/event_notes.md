@@ -10,7 +10,7 @@ Songs:
 - Here There and Everywhere
 - Brain
 
-
+Things talked about:
 - https://urldefense.com/v3/__https://github.com/9001/copyparty__;!!OzdlGbv3!6IRdEYdfHkzn0w4d-9emZwzMiWayIIczkcD7IZMiADJTuqFh5fjkeIivH_lfX5SXl2HbtqVXgeA-p11nKHc$
 - https://github.com/mrdatawolf/project-brain
 - https://docs.google.com/spreadsheets/d/1lKvDxJ6aZJOhhJysCRVTpIJsobJRy3PZCO52i7S8I50/edit?gid=1952542002#gid=1952542002
