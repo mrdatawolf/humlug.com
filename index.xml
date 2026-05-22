@@ -4,78 +4,57 @@
     <title>Home on HumLUG - Humboldt Linux Users Group</title>
     <link>/</link>
     <description>Recent content in Home on HumLUG - Humboldt Linux Users Group</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
       <link>/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/about/</guid>
       <description>About HumLUG: The Humboldt Linux Users Group is a group of individuals in the Humboldt County area that enjoy the use of Linux and discussions about technology. We enjoy meeting and being able to spend time with interesting people who share our interests and the opportunity to learn new things.</description>
     </item>
-    
     <item>
       <title></title>
       <link>/announcements/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/announcements/</guid>
-      <description>Announcements: Next Thursday Evening Presentation Meeting: Next meeting: 6:00PM Jan 15, 2026 at the Babe&amp;rsquo;s Pizza conference room This month&amp;rsquo;s HumLUG presentation meeting will cover three awesome topics:
-see events The site has been moved to it&amp;rsquo;s new home The site has been moved to a new github repo and is now ready for new contributors for anyone who wants to help update it.</description>
+      <description>Announcements: Next Thursday Evening Presentation Meeting: Next meeting: 6:00PM Jan 15, 2026 at the Babe&amp;rsquo;s Pizza conference room This month&amp;rsquo;s HumLUG presentation meeting will cover three awesome topics:&#xA;see events The site has been moved to it&amp;rsquo;s new home The site has been moved to a new github repo and is now ready for new contributors for anyone who wants to help update it.</description>
     </item>
-    
     <item>
       <title></title>
       <link>/event_notes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/event_notes/</guid>
-      <description>Notes on Meetings: May 2026 - Songs:
-Yesterday She&amp;rsquo;s So Heavy Helter Skelter Lady Madonna Here There and Everywhere Brain Things talked about:
-https://urldefense.com/v3/__https://github.com/9001/copyparty__;!!OzdlGbv3!6IRdEYdfHkzn0w4d-9emZwzMiWayIIczkcD7IZMiADJTuqFh5fjkeIivH_lfX5SXl2HbtqVXgeA-p11nKHc$ https://github.com/mrdatawolf/project-brain https://docs.google.com/spreadsheets/d/1lKvDxJ6aZJOhhJysCRVTpIJsobJRy3PZCO52i7S8I50/edit?gid=1952542002#gid=1952542002 https://github.com/mrdatawolf/DM_Helper April 2026 Project NOMAD Knowledge that never goes offline Release 1.32.0 v1.32.0 is here. https://urldefense.com/v3/__https://crosstalksolutions.us20.list-manage.com/track/click?u=48c0b53253f77061ffe21068b&amp;amp;id=5eecfc1b04&amp;amp;e=c498deec1e__;!!OzdlGbv3!6uUQ5UtJj4JvqyVNK0fd4a_SbbapUlvFzb1xKasH0agj4bdgT12liEPe2Ny2nYSjJo5_lH0etS3Fo-61t2M$
-March 2025 - MQTT notes: winget install mosquitto mqtt_serve_tester ps-mqtt-sqlite winget install &amp;ndash;id=thomasnordquist.MQTT-Explorer -e DB Browser for SQLite
-May 2025 - More detail on this project:
-https://en.wikipedia.org/wiki/CD3WD
-https://www.cd3wdproject.org/</description>
+      <description>Meeting Notes May 2026 Songs Yesterday She&amp;rsquo;s So Heavy Helter Skelter Lady Madonna Here There and Everywhere Brain Topics &amp;amp; Links copyparty project-brain Spreadsheet DM Helper April 2026 Project NOMAD — Knowledge that never goes offline&#xA;Release 1.32.0 is here: announcement&#xA;December 2025 Notes on 10&amp;quot; Server Racks, MiniPCs, and Related Hardware In deference to most members&amp;rsquo; sensibilities, the photos of my &amp;ldquo;machine stacks &amp;amp; racks&amp;rdquo; cabling have not been included.</description>
     </item>
-    
     <item>
       <title></title>
       <link>/events/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/events/</guid>
-      <description>HumLUG Events: Lunch meetings: HumLug meets for lunch and fun discussions about technology every friday at 11:30am at Babe&amp;rsquo;s Pizza in Eureka. Evening meetings: We have monthly presentation focussed meetings on the third Thursday at 6:00PM at Babe&amp;rsquo;s Pizza in Eureka.
-Next meeting: 6:00PM May 21th, 2026 at the Babe&amp;rsquo;s Pizza conference room Dave Rowe will give a project update on his Raspberry Pi Zero W portable file server project that uses copyparty as a lightweight file server.</description>
+      <description>HumLUG Events: Lunch meetings: HumLug meets for lunch and fun discussions about technology every friday at 11:30am at Babe&amp;rsquo;s Pizza in Eureka. Evening meetings: We have monthly presentation focussed meetings on the third Thursday at 6:00PM at Babe&amp;rsquo;s Pizza in Eureka.&#xA;Next meeting: 6:00PM May 21th, 2026 at the Babe&amp;rsquo;s Pizza conference room Dave Rowe will give a project update on his Raspberry Pi Zero W portable file server project that uses copyparty as a lightweight file server.</description>
     </item>
-    
     <item>
       <title></title>
       <link>/example/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/example/</guid>
       <description>#!/usr/bin/env bash # # Meshtastic Serial Fix Script for Bazzite / Silverblue / Fedora # -------------------------------------------------------------- # This script DOES NOT modify your system automatically. # Instead, it documents the exact steps required to fix: # - Serial port access failures # - Missing dialout group # - ModemManager interference # - Flatpak Edge blocking Web Serial # # Run this script to *view* the commands and explanations. # Copy/paste the ones you need.</description>
     </item>
-    
     <item>
       <title></title>
       <link>/join/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/join/</guid>
       <description>Join HumLUG&amp;rsquo;s mailing list! If you would like to join the HumLUG mailing list then please send an email to subscribe with your request.</description>
     </item>
-    
     <item>
       <title></title>
       <link>/knowledge/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/knowledge/</guid>
       <description>What I used to finally get a WIO Tracker L1 to be seen in bazzite: https://copilot.microsoft.com/shares/pages/9rH99C2NBGr5TjW2EZvap</description>
     </item>
-    
   </channel>
 </rss>
