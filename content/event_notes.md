@@ -2,11 +2,22 @@
 
 # May 2026 - 
 
-https://urldefense.com/v3/__https://github.com/9001/copyparty__;!!OzdlGbv3!6IRdEYdfHkzn0w4d-9emZwzMiWayIIczkcD7IZMiADJTuqFh5fjkeIivH_lfX5SXl2HbtqVXgeA-p11nKHc$
+Songs:
+- Yesterday
+- She's So Heavy
+- Helter Skelter
+- Lady Madonna
+- Here There and Everywhere
+- Brain
 
-https://github.com/mrdatawolf/project-brain
 
-#April 2026 -
+- https://urldefense.com/v3/__https://github.com/9001/copyparty__;!!OzdlGbv3!6IRdEYdfHkzn0w4d-9emZwzMiWayIIczkcD7IZMiADJTuqFh5fjkeIivH_lfX5SXl2HbtqVXgeA-p11nKHc$
+- https://github.com/mrdatawolf/project-brain
+- https://docs.google.com/spreadsheets/d/1lKvDxJ6aZJOhhJysCRVTpIJsobJRy3PZCO52i7S8I50/edit?gid=1952542002#gid=1952542002
+- https://github.com/mrdatawolf/DM_Helper
+
+# April 2026
+
 Project NOMAD
 Knowledge that never goes offline
 Release 1.32.0
