@@ -1,5 +1,13 @@
 # Meeting Notes
 
+## June 2026
+
+### Topics & Links
+- [MQTT Server/Monitor System](https://github.com/mrdatawolf/BiztechMQTTServerFrameWork/)
+- [MQTT Client](https://github.com/mrdatawolf/PingTrayMonitor)
+- Note you need a MQTT borker still with an ip/name you server and client can connect to
+---
+
 ## May 2026
 
 ### Songs
