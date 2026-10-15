@@ -5,8 +5,10 @@
 
 ## Evening meetings:
 We have monthly presentation focused meetings on the third Thursday at 6:00PM at [Babe's Pizza](https://goo.gl/maps/bChPaDrPDU42) in Eureka. 
-### Next meeting: 6:00PM Sep 17th, 2026 at the [Babe's Pizza](https://goo.gl/maps/bChPaDrPDU42) conference room
+### Next meeting: 6:00PM Oct 15th, 2026 at the [Babe's Pizza](https://goo.gl/maps/bChPaDrPDU42) conference room
 
-- Patrick Moon is going to be giving a presentation on a Design by Contract inspired system to manage the work being done with AI tools. [AI Contract Template](https://mrdatawolf.github.io/PROJECT-TEMPLATE-DBC/presentation/)
+- Ian's offer to the list earlier in the week: he's got a demo ready but needs to leave by 6:45 or so. So, plan on getting here a little earlier than usual; he'll start at 6pm instead of waiting for the the beer fueled discussions to die down.
 
-- Got a project you want to give a progress report on? They'll be time during the meeting for you!
+- We’ve got Audio Dave doing a short presentation on FreeCAD which he used to design a 3d printed case for the headphone amp he built during the recent Burning Amp conference. I imagine he’ll bring the completed project with him.
+
+- Brian may bring his Steam Frame VR gaming headset, or at least talk about his experiences with it.
